@@ -115,7 +115,7 @@ function getArrayOfStrings(arr) {
  */
 function removeFalsyValues(arr) {
     return arr.filter(function(a){
-        if (a != false && a != null && a != 0 && a !="" && a != undefined && a != NaN) {return a} 
+        if (a != false || a != null || a != 0 || a !="" || a != undefined || a != NaN) {return a} 
    });
 }
 
@@ -148,7 +148,9 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-   throw new Error('Not implemented');
+   return arr.map(function(a){
+       return a.length;
+   });
 }
 
 /**
@@ -177,7 +179,8 @@ function insertItem(arr, item, index) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
 function getHead(arr, n) {
-   throw new Error('Not implemented');
+   arr.length = n;
+    return arr;
 }
 
 
@@ -192,7 +195,9 @@ function getHead(arr, n) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
-   throw new Error('Not implemented');
+   return arr.filter(function(a,pos){
+       if (pos > arr.length - n - 1) {return a}
+   });
 }
 
 
@@ -232,7 +237,9 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-   throw new Error('Not implemented');
+   return arr.map(function (a){
+       return a * a;
+   });
 }
 
 
@@ -251,7 +258,10 @@ function toArrayOfSquares(arr) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 function getMovingSum(arr) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
+    return arr.map(function(a){
+       arr.reduce() 
+   });
 }
 
 /**
