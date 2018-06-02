@@ -3,7 +3,7 @@
 /*********************************************************************************************
  *                                                                                           *
  * Plese read the following tutorial before implementing tasks:                              *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array    *
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array    *
  *                                                                                           *
  * NOTE : Please do not use loops! All tasks can be implmeneted using standard Array methods *
  *                                                                                           *
@@ -276,7 +276,10 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
+    return arr.filter(function(a, pos){
+       if (pos % 2 == 1) {return a}
+   });
 }
 
 
@@ -331,7 +334,12 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
+    var count = 0; 
+    arr.map(function(a){
+    if (a > 0) {count++}
+   });
+   return count;
 }
  
 /** 
@@ -364,7 +372,11 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-   throw new Error('Not implemented');
+   if (arr.length == 0) {return 0} else {
+    return arr.reduce(function(a,b){
+       return a + b;
+   });
+}
 }
  
 /** 
@@ -381,6 +393,11 @@ function getItemsSum(arr) {
  */
 function getFalsyValuesCount(arr) {
    throw new Error('Not implemented');
+   var count = 0;
+   arr.filter(function(a){
+    if (a == false || a == null || a == 0 || a =='' || a == undefined || a == NaN) {count++} 
+});
+    return count;
 }
 
 /**
@@ -398,7 +415,12 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
+    var count = 0;
+    arr.filter(function(a){
+       if (a == item) {count++}
+   });
+   return count;
 }
 
 /**
@@ -413,7 +435,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-   throw new Error('Not implemented');
+   return arr.toString();
 }
 
 
@@ -464,7 +486,7 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 /**
