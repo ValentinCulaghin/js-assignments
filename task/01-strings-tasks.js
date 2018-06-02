@@ -261,7 +261,7 @@ function encodeToRot13(str) {
 function isString(value) {   
     throw new Error('Not implemented');    
     if (typeof(value) == 'string'){
-            return true;} else {return false;}        
+            return true} else {return false}        
 }
 
 
@@ -290,12 +290,11 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-   throw new Error('Not implemented');
+  // throw new Error('Not implemented');
     var n1=0, n2=0;
-    if (value.charAt(value.length)=='♦'){n2=14}
-    if (value.charAt(value.length)=='♥'){n2=27}
-    if (value.charAt(value.length)=='♠'){n2=40} 
-    if (value.charAt(0)=='A'){n1=0} 
+    if (value.charAt(value.length-1)=='♦'){n2=13}
+    if (value.charAt(value.length-1)=='♥'){n2=26}
+    if (value.charAt(value.length-1)=='♠'){n2=39} 
     if (value.charAt(0)=='2'){n1=1} 
     if (value.charAt(0)=='3'){n1=2} 
     if (value.charAt(0)=='4'){n1=3} 

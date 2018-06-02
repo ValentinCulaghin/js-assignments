@@ -235,7 +235,9 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    var a=str.split('');
+    var a2= a.reverse();
+     return a2.join('');
 }
 
 
@@ -285,6 +287,19 @@ function reverseInteger(num) {
  */
 function isCreditCardNumber(ccn) {
     throw new Error('Not implemented');
+    var a=[];
+    while (ccn > 0) {
+        a.push(ccn % 10);
+        ccn = Math.trunc(ccn / 10);
+    }
+    for (var i=0; i<a.length; i + 2){
+        a[i]= a[i]*2;
+        if (a[i] > 9) {a[i]= a[i] % 10 + Math.trunc(a[i]/10)}
+    }
+    for (var i=0; i<a.length; i++){
+        s=s+a[i];
+    }
+    if (s % 10 == 0) {return true} else {return false};
 }
 
 
