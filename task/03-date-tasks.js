@@ -95,6 +95,9 @@ function timeSpanToString(startDate, endDate) {
  */
 function angleBetweenClockHands(date) {
     throw new Error('Not implemented');
+    var a = Math.abs(0.5 * (60 * date.getHours() - 11 * date.getMinutes()));
+    if (a > 360) {a = 360 - a}
+    return a * Math.Pi / 180;
 }
 
 

@@ -24,6 +24,9 @@
  */
 function Rectangle(width, height) {
     throw new Error('Not implemented');
+    var r={w: width,  h: height, Area: width * height};
+    return r.w; 
+   
 }
 
 
