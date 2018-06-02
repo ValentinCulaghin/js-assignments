@@ -30,7 +30,19 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if (num % 5 == 0 && num % 3 == 0) { return 'FizzBuzz'
+        
+    } else { if (num % 5 == 0) { return 'Buzz'
+        
+    } else { if (num % 3 == 0) { return 'Fizz'
+        
+    } else { return num
+        
+    }
+        
+    }
+        
+    }
 }
 
 
@@ -90,7 +102,7 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
+    if (a+b>c && a+c>b && b+c>a){return true} else {return false}
 }
 
 
@@ -200,7 +212,13 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    var c1='(', c2=')';
+    if (a > b) {var z=a; a=b; b=z}
+    if (isStartIncluded) {c1 = '['}
+    if (isEndIncluded) {c2 = ']'}
+    var s = c1+`${a}, ${b}`;
+    s = s + c2;
+    return s;
 }
 
 
@@ -234,7 +252,14 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    var inv = 0;
+    while (num > 0){
+        inv = inv + num % 10;
+        num = Math.trunc(num / 10);
+        inv = inv * 10;
+    }
+    inv = inv / 10;
+    return inv;
 }
 
 
@@ -278,7 +303,16 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    var root = 0;
+    while (Math.trunc(num / 10) > 0){
+    root = 0;
+       while (num > 0){
+           root = root + num % 10;
+           num = Math.trunc(num / 10);
+       }
+       num = root;
+   }
+   return num;
 }
 
 
@@ -364,7 +398,12 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-    throw new Error('Not implemented');
+    var s='';
+    while (num > 0) {
+        s = `${Math.trunc(num % n)}` + s;
+        num = Math.trunc(num / n);
+    }
+    return s;
 }
 
 
