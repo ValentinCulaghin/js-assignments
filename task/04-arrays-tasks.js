@@ -39,8 +39,11 @@ function findElement(arr, value) {
  */
 function generateOdds(len) {
     throw new Error('Not implemented');
-    var a = [];
-     return a.fill(2*pos+1);
+    var a = [], pos = 0;
+     a.map(function(pos){
+         return a.push(2*push-1);
+     })
+     return a;
 }
 
 
@@ -75,7 +78,9 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
-    throw new Error('Not implemented');
+    return arr.filter(function(a){
+        return a > 0;
+    });   
 }
 
 /**
@@ -90,7 +95,9 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
-   throw new Error('Not implemented');
+   return arr.filter(function(a){
+        if (a.length > 0) {return a} 
+   });
 }
 
 /**
@@ -107,7 +114,9 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-   throw new Error('Not implemented');
+    return arr.filter(function(a){
+        if (a != false && a != null && a != 0 && a !="" && a != undefined && a != NaN) {return a} 
+   });
 }
 
 /**
@@ -121,7 +130,10 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
-   throw new Error('Not implemented');
+   // throw new Error('Not implemented');
+    return arr.map(function(a){
+        return a.toUpperCase();
+    }); 
 }
 
 
