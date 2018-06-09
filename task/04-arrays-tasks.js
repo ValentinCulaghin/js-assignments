@@ -39,9 +39,9 @@ function findElement(arr, value) {
  */
 function generateOdds(len) {
     throw new Error('Not implemented');
-    var a = [], pos = 0;
+    var a = [], pos = 1;
      a.map(function(pos){
-         return a.push(2*push-1);
+         return a.push(2*pos-1);
      })
      return a;
 }
@@ -223,6 +223,9 @@ function getTail(arr, n) {
  */
 function toCsvText(arr) {
    throw new Error('Not implemented');
+  var s=`${arr}`;
+  
+  return arr.length;
 }
 
 /**

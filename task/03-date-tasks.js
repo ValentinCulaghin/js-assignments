@@ -56,7 +56,8 @@ function parseDataFromIso8601(value) {
  *    Date(2015,1,1)    => false
  */
 function isLeapYear(date) {
-   if (new Date(date.getFullYear(), 1, 29).getDate() === 29) {return true} else {return false}
+   //if (new Date(date.getFullYear(), 1, 29).getDate() === 29) {return true} else {return false}
+   if (((date.getFullYear() % 4==0)&&(date.getFullYear() % 100 !=0))|| (date.getFullYear() %400 ==0)){return true}else{return false}
 }
 
 
@@ -95,9 +96,10 @@ function timeSpanToString(startDate, endDate) {
  */
 function angleBetweenClockHands(date) {
     throw new Error('Not implemented');
+    if (date.getMinutes() == 60/11 * date.getHours()){return 0}else{
     var a = Math.abs(0.5 * (60 * date.getHours() - 11 * date.getMinutes()));
     if (a > 360) {a = 360 - a}
-    return a * Math.Pi / 180;
+    return a * Math.Pi / 180;}
 }
 
 

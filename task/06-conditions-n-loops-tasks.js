@@ -187,6 +187,19 @@ function isInsideCircle(circle, point) {
  */
 function findFirstSingleChar(str) {
     throw new Error('Not implemented');
+    function exist(c){
+        for (var i=0; i<str.length; i++){
+            if (c == str[i]) {
+                return false
+            } else {
+                return true
+            }
+        }
+    }
+    var b = false;
+    for (var i=0; i<str.length; i++){
+        if (exist(str[i])) {b=true; return str[i]; break;} else {return null}
+    }
 }
 
 
@@ -216,9 +229,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
     if (a > b) {var z=a; a=b; b=z}
     if (isStartIncluded) {c1 = '['}
     if (isEndIncluded) {c2 = ']'}
-    var s = c1+`${a}, ${b}`;
-    s = s + c2;
-    return s;
+    return c1+`${a}, ${b}`+c2;
 }
 
 
@@ -235,9 +246,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    var a=str.split('');
-    var a2= a.reverse();
-     return a2.join('');
+    return str.split('').reverse().join('');
 }
 
 
@@ -286,20 +295,17 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-    throw new Error('Not implemented');
-    var a=[];
-    while (ccn > 0) {
-        a.push(ccn % 10);
-        ccn = Math.trunc(ccn / 10);
-    }
-    for (var i=0; i<a.length; i + 2){
-        a[i]= a[i]*2;
-        if (a[i] > 9) {a[i]= a[i] % 10 + Math.trunc(a[i]/10)}
+    //throw new Error('Not implemented');
+    var a=ccn.toString().split('').map(Number), s=0;
+    a.reverse();
+    for (var i=0; i<a.length; i++){
+        if(i %2==1) {a[i] = a[i] * 2};
+        if (a[i] > 9) {a[i] = a[i] % 10 + Math.trunc(a[i]/10)}
     }
     for (var i=0; i<a.length; i++){
         s=s+a[i];
     }
-    if (s % 10 == 0) {return true} else {return false};
+    if (s % 10 == 0) {return true} else {return false}
 }
 
 
