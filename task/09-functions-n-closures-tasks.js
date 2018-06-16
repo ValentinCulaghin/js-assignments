@@ -47,7 +47,10 @@ function getComposition(f,g) {
  *
  */
 function getPowerFunction(exponent) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    return function(x){
+        return Math.pow(x, exponent);
+    }
 }
 
 
@@ -66,6 +69,34 @@ function getPowerFunction(exponent) {
  */
 function getPolynom() {
     throw new Error('Not implemented');
+    return function (...args){ 
+        var arr = Array.from(arguments); 
+        if (arguments.length == 0) {return null} else  {
+            if (arguments.length == 1) {return arr[0]} else {
+            var  s2=`${arr[arr.length - 1]}`, s=''; 
+        arr.pop(); 
+        s=arr.map(function(a, index){
+            if (index == 0) {return `${a}*x^${arr.length-index}`} else {
+            if (a>1) 
+                {return `+${a}*x^${arr.length-index}`} 
+                    else {
+                    if (a<0) {
+                        return `${a}*x^${arr.length-index}`} 
+                            else {
+                            if (a == 1){
+                                return `x^${arr.length-index}`} 
+                                else {
+                                    return ''}
+                                }
+                            }
+                        }}).join('');
+            if (arr[0] > 1) {s=s.substring(1,s.length)} 
+            if(s2 > 0){s2 = '+'+ s2}
+            if (s2 == 0){s2 = ''} 
+            return s + s2;
+            }   
+        }
+    }
 }
 
 

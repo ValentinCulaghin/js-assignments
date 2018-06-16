@@ -58,11 +58,15 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    var fact = 1;
+   /* var fact = 1;
     for (var i=1; i<=n; i++) {
         fact = fact * i;
     };
-    return fact;
+    return fact;*/
+    if (n == 0) { return 1} else { 
+        return getFactorial(n - 1) * n;
+    }
+   /* return n < 2 ? 1 : n * getFactorial(n - 1);*/
 }
 
 
@@ -188,16 +192,17 @@ function isInsideCircle(circle, point) {
 function findFirstSingleChar(str) {
     throw new Error('Not implemented');
     function exist(c){
-        for (var i=0; i<str.length; i++){
+        let b=false;
+        for (let i=0; i<str.length; i++){
             if (c == str[i]) {
-                return false
+                b = false
             } else {
-                return true
+                b = true
             }
         }
     }
-    var b = false;
-    for (var i=0; i<str.length; i++){
+    let b = false;
+    for (let i=0; i<str.length; i++){
         if (exist(str[i])) {b=true; return str[i]; break;} else {return null}
     }
 }
@@ -303,7 +308,7 @@ function isCreditCardNumber(ccn) {
         if (a[i] > 9) {a[i] = a[i] % 10 + Math.trunc(a[i]/10)}
     }
     for (var i=0; i<a.length; i++){
-        s=s+a[i];
+        s = s + a[i];
     }
     if (s % 10 == 0) {return true} else {return false}
 }

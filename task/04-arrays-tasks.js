@@ -38,12 +38,11 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-    throw new Error('Not implemented');
-    var a = [], pos = 1;
-     a.map(function(pos){
-         return a.push(2*pos-1);
-     })
-     return a;
+    var arr = []; 
+    arr.length=len; arr.fill(1,0,len); 
+    return arr.map(function(x,y){
+        return x+2*y;
+    });
 }
 
 
@@ -165,7 +164,11 @@ function getStringsLength(arr) {
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(arr, item, index) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    var arr2= arr.splice(index,0,item); 
+    // arr.splice(index); 
+    // arr.push(item); 
+    // return arr.concat(arr2);
 }
 
 /**
@@ -262,9 +265,6 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
     throw new Error('Not implemented');
-    return arr.map(function(a){
-       arr.reduce() 
-   });
 }
 
 /**
@@ -319,7 +319,9 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-   throw new Error('Not implemented');
+   //throw new Error('Not implemented');
+   arr.sort((a,b)=> a<b);
+   return arr.slice(0,3);
 }
  
  
@@ -337,12 +339,9 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-    throw new Error('Not implemented');
-    var count = 0; 
-    arr.map(function(a){
-    if (a > 0) {count++}
-   });
-   return count;
+   // throw new Error('Not implemented'); 
+    let nr=arr.filter((a) => (typeof(a) == 'number') && (a>0)).length;
+    return nr;
 }
  
 /** 
@@ -418,12 +417,8 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-    throw new Error('Not implemented');
-    var count = 0;
-    arr.filter(function(a){
-       if (a == item) {count++}
-   });
-   return count;
+    //throw new Error('Not implemented');
+   return arr.filter((a) => a === item ).length;
 }
 
 /**
@@ -572,6 +567,9 @@ function group(array, keySelector, valueSelector) {
  */
 function selectMany(arr, childrenSelector) {
     throw new Error('Not implemented');
+    return arr.map(function(a){
+        return a.join().split('');
+    })
 }
 
 
