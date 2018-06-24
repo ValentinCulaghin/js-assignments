@@ -78,6 +78,7 @@ function isLeapYear(date) {
  */
 function timeSpanToString(startDate, endDate) {
    throw new Error('Not implemented');
+   return new Date (startDate.getFullYear(), startDate.getMonth(),endDate.getHours()-startDate.getHours(), endDate.getMinutes()-startDate.getMinutes(),endDate.getSeconds()-startDate.getSeconds(),endDate.getMilliseconds()-startDate.getMilliseconds())
 }
 
 
@@ -96,9 +97,10 @@ function timeSpanToString(startDate, endDate) {
  */
 function angleBetweenClockHands(date) {
     throw new Error('Not implemented');
-    if (date.getMinutes() == 60/11 * date.getHours()){return 0}else{
-    var a = Math.abs(0.5 * (60 * date.getHours() - 11 * date.getMinutes()));
-    if (a > 360) {a = 360 - a}
+    var min=date.getMinutes(), h=date.getHours();
+    if (min == 5.45 * h){return 0} else{
+    var a = Math.abs(0.5 * (60 * h - 11 * min));
+    if (a > 360) {a = 360 - a};
     return a * Math.Pi / 180;}
 }
 

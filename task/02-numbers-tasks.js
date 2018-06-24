@@ -111,8 +111,7 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented'); 
-    return Math.abs(Math.atan(getDistanceBetweenPoints(0,0,x1,y1)/getDistanceBetweenPoints(0,0,x2,y2)));
+    return Math.abs(Math.atan2(y1,x1)-Math.atan2(y2,x2)); 
 }
 
 /**
