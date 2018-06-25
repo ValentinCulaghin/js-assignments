@@ -614,13 +614,19 @@ function getElementByIndexes(arr, indexes) {
  * 
  */
 function swapHeadAndTail(arr) {
-    throw new Error('Not implemented');
-    var a = arr.copyWithin(0,0,Math.trunc(arr.length/2)),
-        b = arr.copyWithin(0,Math.trunc(arr.length/2),arr.length);
-    function Swap(a,b) {
-        var z = a; a=b; b=z;
+    if (arr.length % 2 == 1){
+    let mij =  Math.round( arr.length  / 2), 
+        a = arr.slice(0, mij-1),
+        b = arr.slice(mij),
+        m = [arr[mij-1]]; 
+    return b.concat(m.concat(a));
+    } else {
+        let mij = arr.length / 2, 
+        a = arr.slice(0, mij),
+        b = arr.slice(mij);
+        return b.concat(a);
     }
-  
+    
 }
 
 
