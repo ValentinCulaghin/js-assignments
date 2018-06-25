@@ -371,11 +371,7 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
-   if (arr.length == 0) {return 0} else {
-    return arr.reduce(function(a,b){
-       return a + b;
-   });
-}
+  return arr.length == 0 ? 0 : arr.reduce((a,b) => a+b);   
 }
  
 /** 
@@ -392,11 +388,10 @@ function getItemsSum(arr) {
  */
 function getFalsyValuesCount(arr) {
    throw new Error('Not implemented');
-   var count = 0;
    arr.filter(function(a){
-    if (a == false || a == null || a == 0 || a =='' || a == undefined || a == NaN) {count++} 
+    if (a == false || a == null || a == 0 || a =='' || a == undefined || a == NaN) {return a} 
 });
-    return count;
+    return arr.length;
 }
 
 /**
@@ -481,12 +476,13 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]   
  */
 function getIdentityMatrix(n) {
-    throw new Error('Not implemented');
-    var a=[[]];
-    a[0][0]=1; a[n][n]=1;
-    a.fill(0);
-    
-    return a;
+    var arr= new Array(n); 
+    arr.fill(0);
+    var arr2= arr.map(function (a, pos1){
+        return arr.map(function (b, pos2)	{
+            return pos1 === pos2 ? 1 : 0})
+        });
+    return arr2; 
 }
 
 /**
@@ -503,12 +499,17 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-   throw new Error('Not implemented');
-   var a=[];
-   a[0]=start; a[length-1]=end;
-   return a.map(function(a, pos){
-     return a + pos;
-   });
+   var a = [];
+   if (start == 0) 
+        {a.length = end + 1};
+   if (start < 0) 
+        {a.length = end + Math.abs(start) + 1};
+   if (end == start) 
+        {a[0]=end} 
+   if ( (start > 0) && (end > 0) ) 
+        {a.length = end - start+1};
+   a.fill(start);
+  return a.map((x, p) => x + p);   
 }
 
 /**
