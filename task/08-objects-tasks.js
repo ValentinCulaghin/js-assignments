@@ -26,7 +26,6 @@ function Rectangle(width, height) {
    //throw new Error('Not implemented');
    let rect = {width: width, height: height, getArea: function() {return this.height * this.width} };
    return rect; 
-   //return JSON.stringify(rect); 
 }
 
 
