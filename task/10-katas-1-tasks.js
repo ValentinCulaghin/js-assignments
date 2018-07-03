@@ -89,6 +89,11 @@ function* expandBraces(str) {
  */
 function getZigZagMatrix(n) {
     throw new Error('Not implemented');
+    var m=[], arr=[];
+    m.length = n;
+    arr.length = n;
+    arr.fill(0);
+    m.fill(arr);
 }
 
 

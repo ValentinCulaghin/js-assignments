@@ -243,9 +243,7 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-   return arr.map(function (a){
-       return a * a;
-   });
+   return arr.map((a) => a * a);
 }
 
 
@@ -389,7 +387,7 @@ function getItemsSum(arr) {
 function getFalsyValuesCount(arr) {
    throw new Error('Not implemented');
    arr.filter(function(a){
-    if (a == false || a == null || a == 0 || a =='' || a == undefined || a == NaN) {return a} 
+    if (a === false || a === null || a === 0 || a ==='' || a === undefined || a === NaN) {return a} 
 });
     return arr.length;
 }
@@ -525,6 +523,8 @@ function getIntervalArray(start, end) {
  */
 function distinct(arr) {
    throw new Error('Not implemented');
+   var s=arr.join('');
+    s.indexOf(arr[0])
 }
 
 /**
