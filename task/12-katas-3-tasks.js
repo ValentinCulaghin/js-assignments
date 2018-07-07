@@ -46,6 +46,7 @@ function findStringInSnakingPuzzle(puzzle, searchStr) {
  */
 function* getPermutations(chars) {
     throw new Error('Not implemented');
+    let arr = chars.split('');
 }
 
 

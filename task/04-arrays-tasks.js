@@ -385,11 +385,9 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-   throw new Error('Not implemented');
-   arr.filter(function(a){
-    if (a === false || a === null || a === 0 || a ==='' || a === undefined || a === NaN) {return a} 
-});
-    return arr.length;
+   //throw new Error('Not implemented');
+   let len = arr.length, arr2=removeFalsyValues(arr);
+    return len-arr2.length;
 }
 
 /**
@@ -523,8 +521,8 @@ function getIntervalArray(start, end) {
  */
 function distinct(arr) {
    throw new Error('Not implemented');
-   var s=arr.join('');
-    s.indexOf(arr[0])
+   var arr2=[];
+    arr2.push(arr[0]);
 }
 
 /**
@@ -575,6 +573,7 @@ function group(array, keySelector, valueSelector) {
  */
 function selectMany(arr, childrenSelector) {
     throw new Error('Not implemented');
+    return arr.map(childrenSelector());
 }
 
 

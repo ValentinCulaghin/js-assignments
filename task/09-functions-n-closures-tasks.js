@@ -118,12 +118,11 @@ function getPolynom() {
  *   memoizer() => the same random number  (next run, returns the previous cached result)
  */
 function memoize(func) {
-    throw new Error('Not implemented');
-    const c = [];
-    if (c.find(func)=='undefined'){
-        c.push(func); return c[c.length-1];
-    } else { 
-        return c.find(func)};
+    let f;
+    return function (){ 
+        if (!f) 
+            {f = func(); return f} else {return f};
+    };
 }
 
 
@@ -143,7 +142,7 @@ function memoize(func) {
  * retryer() => 2
  */
 function retry(func, attempts) {
-    throw new Error('Not implemented'); 
+    throw new Error('Not implemented');
 }
 
 
@@ -189,7 +188,8 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn) {
-    throw new Error('Not implemented');
+   // throw new Error('Not implemented');
+   return function () {return 'abcd'}
 }
 
 

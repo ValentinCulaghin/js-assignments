@@ -260,8 +260,8 @@ function encodeToRot13(str) {
  */
 function isString(value) {   
     throw new Error('Not implemented');    
-    if (value.valueOf()) {
-            return true} else {return false}        
+    if (value instanceof String) { return true} else {return false};
+                  
 }
 
 

@@ -175,6 +175,8 @@ function doRectanglesOverlap(rect1, rect2) {
  */
 function isInsideCircle(circle, point) {
     throw new Error('Not implemented');
+    if ((point.x < circle.center.x + circle.radius) && (point.y < circle.center.y + circle.radius) && (point.y>=0) && (point.x>=0))
+    {return true} else {return false}; 
 }
 
 
@@ -365,6 +367,19 @@ function getDigitalRoot(num) {
  */
 function isBracketsBalanced(str) {
     throw new Error('Not implemented');
+    let arr=str.split(''),
+    arr2=arr.map(function(a){
+        if (a=='('){return 1};
+        if (a==')'){return -1};
+        if (a=='{'){return 2};
+        if (a=='}'){return -2};
+        if (a=='['){return 3};
+        if (a==']'){return -3};
+        if (a=='<'){return 4};
+        if (a=='>'){return -4};
+    });
+    if (arr2.length==0){return true};
+    if(arr2.reduce(function(a,b){return a+b;})==0) {return true} else {return false};
 }
 
 
@@ -401,6 +416,8 @@ function isBracketsBalanced(str) {
  */
 function timespanToHumanString(startDate, endDate) {
     throw new Error('Not implemented');
+    let arr = ['a few seconds ago','a minute ago','minutes ago','an hour ago','hours ago','a day ago','days ago','a month ago','months ago','a year ago','years ago'],
+    time = new Date(endDate - startDate)
 }
 
 
