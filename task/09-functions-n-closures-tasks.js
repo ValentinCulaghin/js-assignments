@@ -143,6 +143,9 @@ function memoize(func) {
  */
 function retry(func, attempts) {
     throw new Error('Not implemented');
+    return function(){
+        let att = 0;
+    }
 }
 
 
@@ -210,7 +213,10 @@ function partialUsingArguments(fn) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    return function (){
+        return startFrom++;
+    }
 }
 
 
