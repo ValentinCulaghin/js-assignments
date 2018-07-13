@@ -214,9 +214,8 @@ function partialUsingArguments(fn) {
  */
 function getIdGeneratorFunction(startFrom) {
     //throw new Error('Not implemented');
-    return function (){
-        return startFrom++;
-    }
+    return () => startFrom++;
+    
 }
 
 
