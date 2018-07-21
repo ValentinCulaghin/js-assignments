@@ -405,8 +405,22 @@ function isBracketsBalanced(str) {
  */
 function timespanToHumanString(startDate, endDate) {
     throw new Error('Not implemented');
-    let arr = ['a few seconds ago','a minute ago','minutes ago','an hour ago','hours ago','a day ago','days ago','a month ago','months ago','a year ago','years ago'],
-    time = new Date(endDate - startDate)
+    let arr = [" years ago", "a year ago", 
+    " months ago", "a month ago",
+     " days ago", "a day ago", 
+     " hours ago", "an hour ago", 
+     " minutes ago", "a minute ago", "a few seconds ago"],
+    time = new Date(endDate - startDate);
+    if (time.getFullYear() > 1) {return time.getFullYear() + arr[0]};
+    if (time.getFullYear() == 1) {return arr[1]};
+    if (time.getMonth() > 1) {return time.getMonth() + arr[2]} ;   
+    if (time.getMonth() == 1) {return arr[3]};
+    if (time.getDay() > 1) {return time.getDay() + arr[4]};
+    if (time.getDay() == 1) {return arr[5]};
+    if (time.getHours() > 1) {return time.getHours() + arr[6]};
+    if (time.getHours() == 1) {return arr[7]};
+    if (time.getMinutes() > 1) {return time.getMinutes() + arr[8]};
+    if (time.getMinutes() == 1){return arr[9]} else {return arr[10]};
 }
 
 

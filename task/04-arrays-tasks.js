@@ -216,7 +216,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
-    return arr.map((a)=>a.join(',')).join('\n');     
+    return arr.map((a)=>a.toString()).join('\n');     
 }
 
 /**
@@ -289,16 +289,15 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-   throw new Error('Not implemented');
+   //throw new Error('Not implemented');
    let arr2=[], arr3=[];
-   if(arr.length==0){return arr};
    arr.map(function(a, ind){
-    arr3.length = arr3.length + ind+1;
-    arr3.fill(a, ind);
-    arr2.concat(arr3);
-    arr3 = [];
+    arr2.length = ind+1;
+    arr2.fill(a);
+	arr3 = arr3.concat(arr2);
+    return a;
    });
-   return arr2;
+   return arr3;
 }
 
 
@@ -454,6 +453,9 @@ function toStringList(arr) {
  */
 function sortCitiesArray(arr) {
    throw new Error('Not implemented');
+   arr.sort((a,b)=> a.city > b.city);
+   arr.sort((a,b)=> a.country > b.country);
+    return arr;
 }
 
 /**

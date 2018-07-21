@@ -143,9 +143,13 @@ function memoize(func) {
  */
 function retry(func, attempts) {
     throw new Error('Not implemented');
-    return function(){
-        let att = 0;
+    let att = 0;
+    let retryer = retry( function (){
+    if (att) {throw new Error('test')} else{
+        return att;
     }
+  }, attempts + att);
+  return retryer();
 }
 
 
